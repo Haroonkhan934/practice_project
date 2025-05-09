@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_project/home_screen.dart';
+import 'package:practice_project/statefull_widget_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue), // ThemeData
-      home: const HomeScreen(),
+      home:const StatefullWidget(),
     );
   }
 }
