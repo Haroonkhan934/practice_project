@@ -15,17 +15,15 @@ class _WhyProviderScreenState extends State<WhyProviderScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer.periodic(Duration(seconds: 1), (timer){
+    Timer.periodic(Duration(seconds: 1), (timer) {
       count++;
       print(count);
-      setState(() {
-
-      });
-
+      setState(() {});
     });
   }
+
   Widget build(BuildContext context) {
-    print('build'+ count.toString());
+    print('build' + count.toString());
     return Scaffold(
       appBar: AppBar(title: Center(child: Text("MHKHAN"))),
       body: Column(
@@ -33,17 +31,17 @@ class _WhyProviderScreenState extends State<WhyProviderScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
-
-            child: Text(DateTime.now().hour.toString()+":"+DateTime.now().minute.toString()+":"+DateTime.now().second.toString(),
-                style: TextStyle(fontSize: 50)),
+            child: Text(
+              DateTime.now().hour.toString() +
+                  ":" +
+                  DateTime.now().minute.toString() +
+                  ":" +
+                  DateTime.now().second.toString(),
+              style: TextStyle(fontSize: 50),
+            ),
           ),
 
-          Center(
-
-              child: Text(count.toString(),
-                  style: TextStyle(fontSize: 50)),
-            ),
-
+          Center(child: Text(count.toString(), style: TextStyle(fontSize: 50))),
         ],
       ),
     );
