@@ -17,23 +17,27 @@ class _CountExampleState extends State<CountExample> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    final countProvider = Provider.of<CountProvider>(context,listen: false);
+    final countProvider = Provider.of<CountProvider>(context, listen: false);
     print('build');
-    Timer.periodic(Duration(seconds: 2),(timer){
+    Timer.periodic(Duration(seconds: 2), (timer) {
       countProvider.setCount();
-  });
-
+    });
   }
+
   Widget build(BuildContext context) {
-    final countProvider = Provider.of<CountProvider>(context,listen: false);
+    final countProvider = Provider.of<CountProvider>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(title: Center(child: Text('Mhkhan'))),
       body: Center(
-          child: Consumer<CountProvider>(builder: (context,value,child){
-           return Text(countProvider.count.toString(),
-             style: TextStyle(fontSize: 50),);
-    }),
+        child: Consumer<CountProvider>(
+          builder: (context, value, child) {
+            return Text(
+              countProvider.count.toString(),
+              style: TextStyle(fontSize: 50),
+            );
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
