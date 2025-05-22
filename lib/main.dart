@@ -4,6 +4,8 @@ import 'package:practice_project/provider/count_provider.dart';
 import 'package:practice_project/provider/example_one_provider.dart';
 import 'package:practice_project/screen/count_example.dart';
 import 'package:practice_project/screen/example_one.dart';
+import 'package:practice_project/screen/favourite/favourite_provider.dart';
+import 'package:practice_project/screen/favourite/favourite_screen.dart';
 import 'package:practice_project/statefull_widget_screen.dart';
 import 'package:practice_project/why_provider.dart';
 import 'package:provider/provider.dart';
@@ -23,11 +25,12 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (_) => CountProvider()),
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+          ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
         ],
       child:MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(primarySwatch: Colors.blue), // ThemeData
-        home: const ExampleOneScreen(),
+        home: const FavouriteScreen(),
       ) ,
     );
 
